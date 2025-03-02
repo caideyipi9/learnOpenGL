@@ -1,0 +1,6 @@
+openGL/.vs/
+openGL/openGL/x64/
+openGL/x64/Debug/
+*.vcxproj
+*.filters
+*.user
