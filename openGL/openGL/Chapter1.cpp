@@ -107,7 +107,7 @@ int main()
     TextureGetReady();
 
     // compile our shader program
-    Shader ourShader("6.2.coordinate_systems.vs", "6.2.coordinate_systems.fs");
+    Shader ourShader("shaders/6.2.coordinate_systems.vs", "shaders/6.2.coordinate_systems.fs");
     // tell opengl for each sampler to which texture unit(or other uniform variables) it belongs to (only has to be done once)
     // -------------------------------------------------------------------------------------------
     ourShader.use();

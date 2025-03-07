@@ -96,8 +96,8 @@ int main()
     //TextureGetReady();
 
     // compile our shader program
-    Shader lightingShader("1.colors.vs", "1.colors.fs");
-    Shader lightCubeShader("1.light_cube.vs", "1.light_cube.fs");
+    Shader lightingShader("shaders/1.colors.vs", "shaders/1.colors.fs");
+    Shader lightCubeShader("shaders/1.light_cube.vs", "shaders/1.light_cube.fs");
     // tell opengl for each sampler to which texture unit(or other uniform variables) it belongs to (only has to be done once)
     // -------------------------------------------------------------------------------------------
     
