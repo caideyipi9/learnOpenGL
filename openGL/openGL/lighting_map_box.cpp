@@ -7,6 +7,7 @@
 
 #include <Shader.h>
 #include <Cemera.h>
+#include <Model.h>
 
 #include <iostream>
 
