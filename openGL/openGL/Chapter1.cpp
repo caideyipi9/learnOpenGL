@@ -98,6 +98,7 @@ bool firstMouse = true;
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
 
+
 int main()
 {
     auto window = WindowGetReady(); // a Window and openGL APIs
@@ -173,6 +174,7 @@ int main()
     AfterRendor();
     return 0;
 }
+
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
