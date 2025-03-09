@@ -358,6 +358,8 @@ static void GL_GlobalStatesGetReady() {
     // configure global opengl state
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
+    // gamma Correction
+    glEnable(GL_FRAMEBUFFER_SRGB);
 }
 
 static void ModelGetReady() {
