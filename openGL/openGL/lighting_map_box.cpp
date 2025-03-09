@@ -18,7 +18,7 @@ void processInput(GLFWwindow* window);
 static GLFWwindow* WindowGetReady();
 static void GL_GlobalStatesGetReady();
 static void ModelGetReady();
-unsigned int loadTexture(const char* path);
+unsigned int loadTexture(const char* path, int gammaCorrection);
 static void AfterRendor();
 
 // settings
@@ -124,8 +124,8 @@ int main()
     ModelGetReady();
 
     // TexturesGetReady
-    diffuseMap = loadTexture("textures/container2.png");
-    specularMap = loadTexture("textures/container2_specular.png");
+    diffuseMap = loadTexture("textures/container2.png", 0);
+    specularMap = loadTexture("textures/container2_specular.png", 0);
 
     // compile our shader program
     Shader lightingShader("shaders/lightings_with_boxes.vs", "shaders/lightings_with_boxes.fs");
@@ -390,7 +390,7 @@ static void ModelGetReady() {
 
 // utility function for loading a 2D texture from file
 // ---------------------------------------------------
-unsigned int loadTexture(char const* path)
+unsigned int loadTexture(char const* path, int gammaCorrection)
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -400,7 +400,9 @@ unsigned int loadTexture(char const* path)
     if (data)
     {
         GLenum format;
-        if (nrComponents == 1)
+        if (gammaCorrection)
+            format = GL_SRGB;
+        else if (nrComponents == 1)
             format = GL_RED;
         else if (nrComponents == 3)
             format = GL_RGB;
